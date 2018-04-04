@@ -3,20 +3,24 @@
 </head>
 <body>
 <script>
-var a = ""
-var b = ""
-var output = ""
-let alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm"
-for(i = 0; i < 18; i++) {
-	a += alphabet[Math.floor(Math.random() * alphabet.length)]
-	b += alphabet[Math.floor(Math.random() * alphabet.length)]
-}
-for (i in a) {
-	output += String.fromCharCode(a.charCodeAt(i) ^ b.charCodeAt(i))
-}
+	var a = ""
+	var b = ""
+	var output = ""
+	let alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm"
+	for (i = 0; i < 10; i++) {
+		for (i = 0; i < 18; i++) {
+			a += alphabet[Math.floor(Math.random() * alphabet.length)]
+			b += alphabet[Math.floor(Math.random() * alphabet.length)]
+		}
+		
+		for (i in a) {
+			output += String.fromCharCode(a.charCodeAt(i) ^ b.charCodeAt(i))
+		}
 	
-output = btoa(output)
-document.getElementById("pass").innerText = output
+		output = btoa(output)
+
+		document.getElementById("pass").innerText += `${output}\n`
+	}
 </script>
 <div id="pass">This is where the pass will go</div>
 </body>
