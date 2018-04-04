@@ -15,7 +15,7 @@
 			b += alphabet[Math.floor(Math.random() * alphabet.length)]
 		}
 		
-		for (i in a) {
+		for (var i in a) {
 			output += String.fromCharCode(a.charCodeAt(i) ^ b.charCodeAt(i))
 		}
 	
