@@ -4,11 +4,12 @@
 <body>
 <div id="pass">This is where the pass will go</div>
 <script>
-	var output = ""
-	let alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm"
-	for (i = 0; i < 10; i++) {
+	function genPass() {
 		var a = ""
 		var b = ""
+		var output = ""
+		let alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm"
+		
 		for (i = 0; i < 18; i++) {
 			a += alphabet[Math.floor(Math.random() * alphabet.length)]
 			b += alphabet[Math.floor(Math.random() * alphabet.length)]
@@ -18,10 +19,14 @@
 			output += String.fromCharCode(a.charCodeAt(i) ^ b.charCodeAt(i))
 		}
 	
-		output += `${btoa(output)}\n`
-
+		output = btoa(output)
 		
+		return output
 	}
-	document.getElementById("pass").innerText = output
+	
+	for (i = 0; i < 10; i++) {
+		document.getElementById("pass").innerText += `${genPass()}\n`
+	}
+	
 </script>
 </body>
