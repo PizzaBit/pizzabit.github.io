@@ -17,10 +17,11 @@
 			output += String.fromCharCode(a.charCodeAt(i) ^ b.charCodeAt(i))
 		}
 	
-		output = btoa(output)
+		output += `${btoa(output)}\n`
 
-		document.getElementById("pass").innerText += `${output}\n`
+		
 	}
+	document.getElementById("pass").innerText = output
 </script>
 <div id="pass">This is where the pass will go</div>
 </body>
