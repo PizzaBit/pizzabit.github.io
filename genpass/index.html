@@ -5,21 +5,12 @@
 <p id="pass"></p>
 <script>
 	function genPass() {
-		var a = ""
-		var b = ""
 		var output = ""
-		let alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm"
+		let alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?"
 		
-		for (i = 0; i < 17; i++) {
-			a += alphabet[Math.floor(Math.random() * alphabet.length)]
-			b += alphabet[Math.floor(Math.random() * alphabet.length)]
+		for (i = 0; i < 18; i++) {
+			output += alphabet[Math.floor(Math.random() * alphabet.length)]
 		}
-		
-		for (var i in a) {
-			output += String.fromCharCode(a.charCodeAt(i) ^ b.charCodeAt(i))
-		}
-	
-		output = btoa(output)
 		
 		return output
 	}
