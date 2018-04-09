@@ -8,6 +8,10 @@ for (i = 0; i < amount; i++) {
 id += numbers[Math.floor(Math.random() * numbers.length)]
 }
 
-window.open(`https://www.newgrounds.com/audio/listen/${id}`)
+window.open(`https://www.newgrounds.com/audio/download/${id}`)
 </script>
+<audio controls>
+  <source src=`https://www.newgrounds.com/audio/download/${id}` type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 </body>
