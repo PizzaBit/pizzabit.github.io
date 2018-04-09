@@ -1,0 +1,13 @@
+<body>
+<script>
+let amount = Math.floor(Math.random() * 2) + 5
+let numbers = "0123456789"
+let id = ""
+
+for (i = 0; i < amount; i++) {
+id += numbers[Math.floor(Math.random() * numbers.length)]
+}
+
+Window.open(`https://www.newgrounds.com/audio/listen/${id}`)
+</script>
+</body>
