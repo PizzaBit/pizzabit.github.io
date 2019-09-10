@@ -2,6 +2,10 @@
   <title>Erik's Epic Site</title>
   <script>
     var subSites = ["genpass"];
+    
+    subSites.forEach(site => {
+      document.body.innerHTML += `<br><a href="/${site}">${site}</a>`;
+    })
   </script>
 </head>
 
