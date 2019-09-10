@@ -3,13 +3,13 @@
 </head>
 
 <body>
-  <t>Tommy got an 8/10</t>
+  <h2>Tommy got an 8/10</h2>
+  <h3>Sites:</h3>
   <script>
     var subSites = ["genpass"];
     
     subSites.forEach(site => {
-      document.body.innerHTML += `<br>
-                                  <a href="/${site}">${site}</a>`;
+      document.body.innerHTML += `<a href="/${site}">${site}</a>`;
     })
   </script>
 </body>
