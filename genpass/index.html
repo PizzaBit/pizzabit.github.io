@@ -1,21 +1,21 @@
 <head>
-<title>Password Generator</title>
+	<title>Password Generator</title>
 </head>
 <body>
-<p id="pass"></p>
-<script>
-	function genPass() {
-		var output = ""
-		let alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?"
+	<input id="in">
+	<p id="pass"></p>
+	<script>
+		function genPass() {
+			var output = "";
+			let chars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?";
 		
-		for (i = 0; i < 18; i++) {
-			output += alphabet[Math.floor(Math.random() * alphabet.length)]
+			for (i = 0; i < 18; i++) {
+				output += alphabet[Math.floor(Math.random() * alphabet.length)];
+			}
+		
+			return output
 		}
-		
-		return output
-	}
 	
-	document.getElementById("pass").innerText += `${genPass()}\n${genPass()}\n${genPass()}\n${genPass()}\n${genPass()}\n`
-	
-</script>
+		document.getElementById("pass").innerText += `${genPass()}\n${genPass()}\n${genPass()}\n${genPass()}\n${genPass()}\n`
+	</script>
 </body>
