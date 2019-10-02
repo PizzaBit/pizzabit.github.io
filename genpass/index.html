@@ -7,13 +7,25 @@
 		<option>Letters + Nums</option>
 		<option>All Chars</option>
 	</select>
-	<button>Generate</button>
+	<button onclick="rtnPass(5)">Generate</button>
 	<p id="pass"></p>
 	<script>
-		function genPass() {
+		function getPass() {
+			let dropDown = document.getElementById("type")
 			var output = "";
-			let chars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?";
-			let splts = [52, 10]
+			let allChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?";
+			let splts = [52, 62]
+			var chars = ""
+			
+			if (dropDown.selectedIndex == 0) {
+				chars = allChars
+			} 
+			else if (dropDown.selectedIndex == 1) {
+				chars = allChars
+			}
+			else {
+				chars = allChars
+			}
 			
 			for (i = 0; i < 18; i++) {
 				output += chars[Math.floor(Math.random() * chars.length)];
@@ -21,7 +33,13 @@
 		
 			return output
 		}
-	
-		document.getElementById("pass").innerText += `${genPass()}\n${genPass()}\n${genPass()}\n${genPass()}\n${genPass()}\n`
+		
+		function rtnPass(a) {
+			document.getElementById("pass").innerText = ""
+			
+			for (i = 0; i < a; i++) {
+				document.getElementById("pass").innerText += `${getPass()} \n`
+			}
+		}
 	</script>
 </body>
