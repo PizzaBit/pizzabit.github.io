@@ -2,13 +2,16 @@
 	<title>Password Generator</title>
 </head>
 <body>
-	<input id="in">
+	<select id="type">
+		<option>H</option>
+	</select>
 	<p id="pass"></p>
 	<script>
 		function genPass() {
 			var output = "";
 			let chars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?";
-		
+			let splts = [52, 10]
+			
 			for (i = 0; i < 18; i++) {
 				output += chars[Math.floor(Math.random() * chars.length)];
 			}
