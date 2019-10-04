@@ -1,14 +1,5 @@
 <head>
 	<title>Password Generator</title>
-</head>
-<body>
-	<select id="type">
-		<option>Letters</option>
-		<option>Letters + Nums</option>
-		<option>All Chars</option>
-	</select>
-	<button onclick="rtnPass(5)">Generate</button>
-	<p id="pass"></p>
 	<script>
 		function getPass() {
 			let dropDown = document.getElementById("type")
@@ -18,10 +9,10 @@
 			var chars = ""
 			
 			if (dropDown.selectedIndex == 0) {
-				chars = allChars
+				chars = allChars.slice(0, 52)
 			} 
 			else if (dropDown.selectedIndex == 1) {
-				chars = allChars
+				chars = allChars.slice(0, 62)
 			}
 			else {
 				chars = allChars
@@ -42,4 +33,13 @@
 			}
 		}
 	</script>
+</head>
+<body>
+	<select id="type">
+		<option>Letters</option>
+		<option>Letters + Nums</option>
+		<option>All Chars</option>
+	</select>
+	<button onclick="rtnPass(5)">Generate</button>
+	<p id="pass"></p>
 </body>
