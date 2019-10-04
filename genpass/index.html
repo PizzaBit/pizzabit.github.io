@@ -1,11 +1,10 @@
 <head>
 	<title>Password Generator</title>
 	<script>
+		let dropDown = document.getElementById("type")
+		let allChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?"
 		function getPass() {
-			let dropDown = document.getElementById("type")
-			var output = "";
-			let allChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?";
-			let splts = [52, 62]
+			var output = ""
 			var chars = ""
 			
 			if (dropDown.selectedIndex == 0) {
