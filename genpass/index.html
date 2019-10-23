@@ -12,9 +12,11 @@
 	<script>
 		let dropDown = document.getElementById("type")
 		let allChars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890`-=/*+~!@#$%^&*()_,.;[]\|{}:<>?"
+		var output = ""
+		var chars = ""
 		function getPass() {
-			var output = ""
-			var chars = ""
+			output = ""
+			chars = ""
 			
 			if (dropDown.selectedIndex == 0) {
 				chars = allChars.slice(0, 52)
